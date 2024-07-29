@@ -1,0 +1,30 @@
+include mixin.pug
+doctypehtml
+html(lang="en")
+    block head
+        head
+            +head("Property")
+    body
+        block oneHundredViewSec
+            .oneHundredViewSec#landing
+                header
+                    .container
+                        .logo: a(href="index.html") Property
+                        nav
+                            span: a(href="index.html" class="active") Home 
+                            span: a(href="index.html") Properties 
+                            span: a(href="index.html") Services 
+                            span: a(href="index.html") About 
+                            span: a(href="index.html") Contact Us
+                        .bars
+                            span
+                            span
+                            span
+                .landing
+                    .container
+                        .text Easiest way to find your dream home
+                        .search
+                            input(type="text", name="search" placeholder="Your ZIP code or City. e.g. New York")
+                            a(href="index.html" class="btn"): button Search
+        block scripts 
+            script(src="app.js")

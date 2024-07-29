@@ -1,0 +1,140 @@
+// import variables file
+@use "variables" as *; 
+.oneHundredViewSec {
+    background: linear-gradient(0deg, rgb(0 0 0 / 30%), rgb(0 0 0 / 30%)), url(../imgs/hero_bg_1.jpg);
+    background-color: $main_color;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    display: flex;
+    flex-direction: column;
+    header {
+        margin-top: 20px;
+        color: white;
+        .container {
+            width: 90%;
+            height: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $main_color;
+            border-radius: 10px;
+            .logo {
+                a {
+                    font-size: 25px;
+                    text-decoration: none;
+                    color: $sec_color;
+                }
+            }
+            nav {
+                span {
+                    .active {
+                        color: white;
+                    }
+                    a {
+                        text-decoration: none;
+                        color: white;
+                        font-size: 16px;
+                        color: $sec_color;
+                        margin-left: 30px;
+                    }
+                }
+            }
+            .bars {
+                display: none;
+                flex-direction: column;
+                cursor: pointer;
+                span {
+                    width: 30px;
+                    height: 3px;
+                    background-color: rgb(255, 255, 255);
+                    margin: 3px;
+                }
+            }
+        }
+    }
+    .landing {
+        height: calc(100vh - 80px);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            .text {
+                color: white;
+                font-size: 25px;
+                font-weight: bold;
+            }
+            .search {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                flex-wrap: wrap;
+                input {
+                    border-radius: 20px;
+                    padding: 10px 15px;
+                    width: 350px;
+                    border: none;
+                    outline: unset;
+                    &::placeholder {
+                        color: rgba(0, 0, 0, 0.698);
+                    }
+                }
+                .btn {
+                    text-decoration: none;
+                    transition: $transition;
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
+                    button {
+                        cursor: pointer;
+                        border-radius: 20px;
+                        color: white;
+                        padding: 10px 15px;
+                        background-color: $main_color;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+}
+#landing {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh; /* Ensure it covers the viewport height */
+}
+@media (max-width: 767px) {
+    .oneHundredViewSec {
+        header {
+            .container {
+                nav {
+                    display: none;
+                }
+                .bars {
+                    display: flex;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 450px) {
+    .oneHundredViewSec {
+        .landing {
+            .container {
+                .search {
+                    input {
+                        width: 250px;
+                    }
+                }
+            }
+        }
+    }
+}
